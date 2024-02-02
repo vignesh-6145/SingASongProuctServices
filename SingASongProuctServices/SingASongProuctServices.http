@@ -1,0 +1,6 @@
+@SingASongProuctServices_HostAddress = http://localhost:5072
+
+GET {{SingASongProuctServices_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

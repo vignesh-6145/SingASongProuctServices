@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingASongProuctServices", "SingASongProuctServices\SingASongProuctServices.csproj", "{7AAD0577-C5E9-4EA7-B561-B046D287C411}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataService", "DataService\DataService.csproj", "{48A4C317-1646-4CDA-97B8-728FDB51FD5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AAD0577-C5E9-4EA7-B561-B046D287C411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AAD0577-C5E9-4EA7-B561-B046D287C411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AAD0577-C5E9-4EA7-B561-B046D287C411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AAD0577-C5E9-4EA7-B561-B046D287C411}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48A4C317-1646-4CDA-97B8-728FDB51FD5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A4C317-1646-4CDA-97B8-728FDB51FD5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A4C317-1646-4CDA-97B8-728FDB51FD5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A4C317-1646-4CDA-97B8-728FDB51FD5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97C075FC-3F56-4BCA-BA79-C2E6307789C5}
+	EndGlobalSection
+EndGlobal
