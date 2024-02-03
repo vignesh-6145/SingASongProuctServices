@@ -12,6 +12,7 @@ namespace DataService.Data
     public class APIClient
     {
         HttpClient client;
+        
         public APIClient(string BaseAddress) { 
             client = new HttpClient();
             client.BaseAddress = new Uri(BaseAddress);  
@@ -28,6 +29,12 @@ namespace DataService.Data
             HttpResponseMessage response = client.PostAsJsonAsync(url,obj).GetAwaiter().GetResult();
             Console.WriteLine(response.StatusCode);
             return response.StatusCode;
+        }
+        public HttpResponseMessage MakePostCall(string url, User obj)
+        {
+            HttpResponseMessage response = client.PostAsJsonAsync(url, obj).GetAwaiter().GetResult();
+            Console.WriteLine(response.StatusCode);
+            return response;
         }
         public string MakeGetAPICall(string url)
         {
