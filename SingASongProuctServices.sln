@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityHubService", "Ident
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogueService", "CatalogueService\CatalogueService.csproj", "{B044B685-B03C-40E1-9CC0-91E76DB6FD45}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartService", "CartService\CartService.csproj", "{485F8F96-F85F-4439-921F-059B6F28CB3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B044B685-B03C-40E1-9CC0-91E76DB6FD45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B044B685-B03C-40E1-9CC0-91E76DB6FD45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B044B685-B03C-40E1-9CC0-91E76DB6FD45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{485F8F96-F85F-4439-921F-059B6F28CB3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{485F8F96-F85F-4439-921F-059B6F28CB3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{485F8F96-F85F-4439-921F-059B6F28CB3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{485F8F96-F85F-4439-921F-059B6F28CB3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
