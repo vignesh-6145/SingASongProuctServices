@@ -41,7 +41,8 @@ namespace DataService.Data
                 }
                 return tracks;
 
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 // print custom error message in future
                 Console.WriteLine(ex.Message);
@@ -49,7 +50,7 @@ namespace DataService.Data
             return tracks;
 
         }
-       
+
         public HttpStatusCode DeleteTrack(int TrackID)
         {
             string DeleteTrackURL = $"Tracks/{TrackID}";
@@ -60,22 +61,24 @@ namespace DataService.Data
             string UpdateTrackURL = "UpdateTrack";
             return client.MakePutCall(UpdateTrackURL, track);
         }
-        public  Track GetTrack(int TrackID)
+        public Track GetTrack(int TrackID)
         {
             string GetTrackURL = $"Tracks/{TrackID}";
             string track = null;
 
-            try {
+            try
+            {
                 var responseString = client.MakeGetAPICall(GetTrackURL);
-                
+
                 return ConvertToTrack(responseString);
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 Console.WriteLine("Failed to convert response to Model[track]");
-                Console.WriteLine(ex.Message);  
+                Console.WriteLine(ex.Message);
             }
             return null;
-            
+
         }
         public static Track ConvertToTrack(string str)
         {
@@ -137,5 +140,21 @@ namespace DataService.Data
             };
         }
 
+        public static Payment ConverToPayment(string str)
+        {
+            JToken obj = JToken.Parse(str);
+            return ConverToPayment(obj);
+        }
+        public static Payment ConverToPayment(JToken Obj)
+        {
+            Payment payment = new Payment();
+            payment.PaymentId = int.Parse(Obj["paymentId"].ToString());
+            
+            payment.PurchaseType = Obj["purchaseType"].ToString();
+            payment.PurchaseStatus = (PaymentStatus)(int.Parse(Obj["purchaseStatus"].ToString()));
+            payment.CartID = int.Parse(Obj["cartID"].ToString());
+            return payment;
+
+        }
     }
 }
