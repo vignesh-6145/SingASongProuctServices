@@ -24,6 +24,12 @@ namespace DataService.Data
             Console.WriteLine(response.Content); 
             return response.StatusCode;
         }
+        public HttpStatusCode MakePostCall(string url, Payment obj)
+        {
+            HttpResponseMessage response = client.PostAsJsonAsync(url, obj).GetAwaiter().GetResult();
+            Console.WriteLine(response.StatusCode);
+            return response.StatusCode;
+        }
         public HttpStatusCode MakePostCall(string url, Track obj)
         {
             HttpResponseMessage response = client.PostAsJsonAsync(url,obj).GetAwaiter().GetResult();
