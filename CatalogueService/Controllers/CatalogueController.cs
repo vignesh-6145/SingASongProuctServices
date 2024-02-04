@@ -32,5 +32,13 @@ namespace CatalogueService.Controllers
             }
             return Ok(item);
         }
+        [HttpPost]
+        [Route("User/{UserID}/AddToCart/{TrackID}")]
+        public IActionResult AddToCart(int UserID,int TrackID)
+        {
+            var result = client.AddToCart(UserID,TrackID);
+            if (result.Equals("Item Added to the Cart")) return Ok(result);
+            else return BadRequest(result);
+        }
     }
 }

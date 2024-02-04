@@ -36,6 +36,12 @@ namespace DataService.Data
             Console.WriteLine(response.StatusCode);
             return response;
         }
+        public string MakePostCall(string url)
+        {
+            HttpResponseMessage response = client.PostAsync(url,null).GetAwaiter().GetResult();
+            Console.WriteLine(response.StatusCode);
+            return response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+        }
         public string MakeGetAPICall(string url)
         {
             try

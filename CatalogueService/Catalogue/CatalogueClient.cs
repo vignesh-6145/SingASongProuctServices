@@ -10,7 +10,7 @@ namespace CatalogueService.Catalogue
         APIClient client;
         public CatalogueClient()
         {
-            client = new APIClient("https://localhost:7197/Data/");
+            client = new APIClient("https://localhost:7197/");
         }
 
         public CatalogueItem buildCatalogueItem(Track track)
@@ -40,13 +40,13 @@ namespace CatalogueService.Catalogue
         }
         public Album GetAlbum(int AlbumID)
         {
-            string AlbumURL = $"Albums/{AlbumID}";
+            string AlbumURL = $"Data/Albums/{AlbumID}";
             return DataClient.ConvertToAlbum(client.MakeGetAPICall(AlbumURL));
         }
 
         public IEnumerable<Genre> GetTrackGenres(int TrackID)
         {
-            string TrackGenres = $"Tracks/{TrackID}/Genres";
+            string TrackGenres = $"Data/Tracks/{TrackID}/Genres";
             var responseStr = client.MakeGetAPICall(TrackGenres);
             JArray arr = JArray.Parse(responseStr);
             List<Genre> Genres = new List<Genre>();
@@ -58,7 +58,7 @@ namespace CatalogueService.Catalogue
         }
         public IEnumerable<Artist> GetTrackArtist(int TrackID)
         {
-            string TrackArtsitURL = $"Tracks/{TrackID}/Artists";
+            string TrackArtsitURL = $"Data/Tracks/{TrackID}/Artists";
             var responseStr = client.MakeGetAPICall(TrackArtsitURL);
             JArray arr = JArray.Parse(responseStr);
             IList<Artist> Artists = new List<Artist>();
@@ -70,7 +70,7 @@ namespace CatalogueService.Catalogue
         }
         public IEnumerable<Track> GetTracks()
         {
-            string GetTracksURL = $"Tracks/GetAllTracks";
+            string GetTracksURL = $"Data/Tracks/GetAllTracks";
             var responeStr =  client.MakeGetAPICall(GetTracksURL);
             JArray arr = JArray.Parse(responeStr);
             List<Track> tracks  = new List<Track>();
@@ -81,9 +81,15 @@ namespace CatalogueService.Catalogue
             return tracks;
 
         }
+        public string AddToCart(int UserID, int TracKID)
+        {
+            string AddToCartURL = $"api/Cart/User/{UserID}/AddToCart/{TracKID}";
+            string resp = client.MakePostCall(AddToCartURL);
+            return resp;
+        }
         public Track GetTrack(int TrackID)
         {
-            string TrackURL = $"Tracks/{TrackID}";
+            string TrackURL = $"Data/Tracks/{TrackID}";
             var responseStr = client.MakeGetAPICall(TrackURL);
             return DataClient.ConvertToTrack(responseStr);
         }
